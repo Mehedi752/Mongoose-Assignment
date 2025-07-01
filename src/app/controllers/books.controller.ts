@@ -63,7 +63,7 @@ bookRoutes.get('/:bookId', async (req: Request, res: Response) => {
   }
 })
 
-bookRoutes.put('/:bookId', async (req: Request, res: Response) => {
+bookRoutes.put('/:bookId', async (req: Request, res: Response): Promise<any> => {
   try {
     const bookId = req.params.bookId
     const updatedBook = await Book.findByIdAndUpdate(bookId, req.body, {
